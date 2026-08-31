@@ -22,6 +22,10 @@ from bot.config import (
     ADMIN_IDS, AUTO_CLOSE_CHECK_HOUR_UTC, AUTO_CLOSE_DEFAULT_DAYS, BOT_TOKEN,
     DEFAULT_RESPONSIBLE, MORNING_TIME_UTC,
 )
+
+from bot.config import AI_API_KEY, AI_ENABLED
+print(f"🔍 MAIN: AI_API_KEY = {'SET' if AI_API_KEY else 'EMPTY'}, AI_ENABLED = {AI_ENABLED}")
+
 from bot.db.connection import init_db
 from bot.handlers import admin, commands, issues, misc, reports, router, stats
 from bot.jobs.scheduler import auto_close_job, morning_greeting, rearm_reminders_on_startup
