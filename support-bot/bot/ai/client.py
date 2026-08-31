@@ -23,16 +23,12 @@ print("🚀 client.py imported")
 _client: AsyncOpenAI | None = None
 if AI_ENABLED:
     try:
-        print("🔄 Creating AsyncOpenAI client...")
         _client = AsyncOpenAI(api_key=AI_API_KEY, base_url=AI_BASE_URL)
-        print("✅ AsyncOpenAI client created successfully")
         logger.info("AI клиент инициализирован")
     except Exception as e:
-        print(f"❌ Exception during AsyncOpenAI creation: {e}")
         logger.error(f"Ошибка инициализации AI: {e}")
         _client = None
 else:
-    print("⚠️ AI_ENABLED is False, AI disabled")
     logger.warning("AI_API_KEY не задан или AI_ENABLED=false, ИИ-функции отключены")
 
 
